@@ -1,0 +1,49 @@
+.message {
+
+
+    /*width: 800px;*/
+    /*border: #0059b3 4px solid;*/
+}
+
+.imageAndText {
+    display: flex;
+
+}
+
+.imageAndText img {
+    width: 70px;
+}
+
+.text {
+    border: solid 1px #F5F7FB;
+    border-radius: 10px 10px 10px 0px;
+    background: #F5F7FB;
+    color: black;
+    margin-left: 15px;
+    padding: 10px;
+    max-width: 100%;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.text:after {
+
+}
+
+.name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.messageText {
+
+}
+
+.time {
+
+}

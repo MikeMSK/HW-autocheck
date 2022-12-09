@@ -1,0 +1,52 @@
+.friendMessage {
+
+}
+
+.friendImageAndText {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+
+.friendImageAndText img {
+    width: 70px;
+
+}
+
+.friendText {
+    flex-direction: row-reverse;
+    border: solid 1px dodgerblue;
+    border-radius: 10px 10px 0px 10px;
+    background: dodgerblue;
+    color: whitesmoke;
+    margin-right: 15px;
+    padding: 10px;
+    max-width: 100%;
+
+    font-family: 'AppleGothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.friendText:after {
+
+}
+
+.friendName {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.friendMessageText {
+
+}
+
+.friendTime {
+    display: flex;
+    flex-direction: row-reverse;
+}
