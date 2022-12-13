@@ -30,11 +30,8 @@ export const pureOnBlur = (name: string,
 }
 
 export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>,
-                            addUser: (name: string) => void) => {
-    if (e.charCode === 13) {
-        addUser(e.currentTarget.value)
-        console.log(e.currentTarget.value)
-    }
+                            addUser: () => void) => {
+    e.key === 'Enter' && addUser()
     // если нажата кнопка
     // Enter -
     // добавить
