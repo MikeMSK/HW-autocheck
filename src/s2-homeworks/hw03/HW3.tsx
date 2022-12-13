@@ -30,8 +30,6 @@ export const pureAddUserCallback = (name: string, setUsers: ([]) => void, users:
         _id: new Date().getTime(),
         name: name
     }
-    console.log(user)
-    console.log(users)
     setUsers([user, ...users])
 }
 
