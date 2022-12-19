@@ -56,13 +56,12 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 
     return (
         <div className={s.inputWrapper}>
-            <input
-                id={id}
-                type={'text'}
-                onChange={onChangeCallback}
-                onKeyPress={onKeyPressCallback}
-                className={finalInputClassName}
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+            <input id={id}
+                   type={'text'}
+                   onChange={onChangeCallback}
+                   onKeyPress={onKeyPressCallback}
+                   className={finalInputClassName}
+                   {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
             <span
                 id={id ? id + '-span' : undefined}
