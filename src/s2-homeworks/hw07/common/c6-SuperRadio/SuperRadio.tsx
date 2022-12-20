@@ -6,15 +6,11 @@ import React, {
 } from 'react'
 import s from './SuperRadio.module.css'
 
-type DefaultRadioPropsType = DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->
+type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement>
 // тип пропсов обычного спана
-type DefaultSpanPropsType = DetailedHTMLProps<
-    HTMLAttributes<HTMLSpanElement>,
-    HTMLSpanElement
->
+type DefaultSpanPropsType = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>,
+    HTMLSpanElement>
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
     options?: any[]
@@ -24,17 +20,23 @@ type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
 }
 
 const SuperRadio: React.FC<SuperRadioPropsType> = ({
-    id,
-    name,
-    className,
-    options,
-    value,
-    onChange,
-    onChangeOption,
-    spanProps,
-    ...restProps
-}) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+                                                       id,
+                                                       name,
+                                                       className,
+                                                       options,
+                                                       value,
+                                                       onChange,
+                                                       onChangeOption,
+                                                       spanProps,
+                                                       ...restProps
+                                                   }) => {
+    const onChangeCallback = (id:number) => {
+        console.log(id)
+        if (onChangeOption) {
+            onChangeOption(id)
+        }
+        // onChange && onChange(e)
+
         // делают студенты
     }
 
@@ -43,28 +45,36 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
     const mappedOptions: any[] = options
         ? options.map((o) => (
-              <label key={name + '-' + o.id} className={s.label}>
-                  <input
-                      id={id + '-input-' + o.id}
-                      className={finalRadioClassName}
-                      type={'radio'}
-                      // name, checked, value делают студенты
+            <label key={name + '-' + o.id}
+                   className={s.label}>
 
-                      onChange={onChangeCallback}
-                      {...restProps}
-                  />
-                  <span
-                      id={id + '-span-' + o.id}
+                <input id={id + '-input-' + o.id}
+                       className={finalRadioClassName}
+                       type={'radio'}
+
+                       name={'radio'}
+                       checked={o.id === value}
+                       value={o.id}
+
+                    // name, checked, value делают студенты
+
+                       onChange={()=>onChangeCallback(o.id)}
+                       {...restProps}/>
+
+                <span id={id + '-span-' + o.id}
                       {...spanProps}
-                      className={spanClassName}
-                  >
+                      className={spanClassName}>
                       {o.value}
                   </span>
-              </label>
-          ))
+            </label>
+        ))
         : []
 
-    return <div className={s.options}>{mappedOptions}</div>
+    return (
+        <div className={s.options}>
+            {mappedOptions}
+        </div>
+    )
 }
 
 export default SuperRadio
