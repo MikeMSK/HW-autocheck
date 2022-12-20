@@ -21,7 +21,7 @@ const HW6 = () => {
     }
     const restore = () => {
         debugger
-        restoreState<string>('hw6-editable-span-value', value)
+        setValue(restoreState<string>('hw6-editable-span-value', value))
         // делают студенты
 
     }
