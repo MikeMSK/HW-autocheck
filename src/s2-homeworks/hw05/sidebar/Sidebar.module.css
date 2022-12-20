@@ -1,25 +1,42 @@
 .sidebar {
+    display: none;
+    background: #67a6e3;
 }
 
 .sidebar.open {
+    display: block;
+    width: 40vh;
+    height: 100vh;
+    position: absolute;
 }
 
 .background {
+    background: black;
+    opacity: 70%;
 }
 
 .nav {
 }
 
 .nav a {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .nav a:hover {
+
 }
 
 .nav a.active {
 }
+
 .close {
+    border: 0px;
 }
 
 .close img {
 }
+
+
+
