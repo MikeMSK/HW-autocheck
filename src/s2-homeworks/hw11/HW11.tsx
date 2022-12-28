@@ -17,15 +17,13 @@ function HW11() {
 
     const change = (event: any, value: any) => {
 
-        if (value !== null) {
-            if (Array.isArray(value)) {
-                setValue1(event.target.value)
-
-                setValue2(event.target.value)
-            } else {
-                setValue1(event.target.value)
-            }
+        if (Array.isArray(value)) {
+            setValue1(event.target.value)
+            setValue2(event.target.value)
+        } else {
+            setValue1(event.target.value)
         }
+
 
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
     }
@@ -45,7 +43,7 @@ function HW11() {
                         </span>
 
                         <SuperRange id={'hw11-single-slider'}
-                                    value={value1}
+                                    defaultValue={value1}
                                     onChange={(event) => change(event, value1)}
 
                             // сделать так чтоб value1 изменялось // пишет студент
@@ -61,7 +59,7 @@ function HW11() {
                         </span>
 
                         <SuperRange id={'hw11-double-slider'}
-                                    value={[value1, value2]}
+                                    defaultValue={[value1, value2]}
                                     onChange={(event) => change(event, [value1, value2])}
 
                             // disableSwap
