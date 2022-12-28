@@ -1,9 +1,13 @@
 .container {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 .number {
+    margin: 10px;
 }

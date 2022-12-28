@@ -42,9 +42,11 @@ function HW11() {
                               className={s.number}>
                             {value1}
                         </span>
+
                         <SuperRange id={'hw11-single-slider'}
                                     value={value1}
                                     onChange={(event) => change(event, value1)}
+
                             // сделать так чтоб value1 изменялось // пишет студент
 
                         />
