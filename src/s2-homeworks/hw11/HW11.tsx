@@ -19,16 +19,13 @@ function HW11() {
 
         if (Array.isArray(value)) {
             if (activeThumb === 0) {
-                setValue1(event.target.value)
-                // setValue2(event.target.value[0])
+                setValue1(event.target.value[0])
             } else {
                 setValue2(event.target.value[1]);
             }
         } else {
             setValue1(event.target.value)
         }
-
-
     }
 
 // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
@@ -50,8 +47,8 @@ function HW11() {
                         <SuperRange id={'hw11-single-slider'}
                                     value={value1}
                                     onChange={change}
-                                    max={100}
-                                    min={0}
+                            // max={100}
+                            // min={0}
                             // сделать так чтоб value1 изменялось // пишет студент
                                     disableSwap/>
                     </div>
@@ -65,8 +62,8 @@ function HW11() {
                         <SuperRange id={'hw11-double-slider'}
                                     value={[value1, value2]}
                                     onChange={change}
-                                    max={100}
-                                    min={0}
+                            // max={100}
+                            // min={0}
                             // сделать так чтоб value1/2 изменялось // пишет студент
                                     disableSwap/>
 
