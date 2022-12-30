@@ -25,11 +25,11 @@ function HW11() {
             // if (event.target.value[1] > 0) {
             //     setValue2(event.target.value[1]);
             // }
-            if (activeThumb === 0) {
-                setValue1(event.target.value[0])
-            } else {
-                setValue2(event.target.value[1]);
-            }
+
+            setValue1(event.target.value[0])
+
+            setValue2(event.target.value[1]);
+
         } else {
             setValue1(event.target.value)
         }
