@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState,} from 'react'
+import Event from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
 import {restoreState} from '../hw06/localStorage/localStorage'
@@ -15,25 +16,24 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: any, value: number | number[]) => {
-
+    const change = (event: any, value: number | number[], activeThumb: number) => {
         if (Array.isArray(value)) {
-            if (event.target.value[0] > 0) {
-                setValue1(event.target.value[0])
-            }
-            if (event.target.value[1] > 0) {
-                setValue2(event.target.value[1]);
-            }
-            // if (activeThumb === 0) {
+            // if (event.target.value[0] > 0) {
             //     setValue1(event.target.value[0])
-            // } else {
+            //     console.log(value1)
+            // }
+            // if (event.target.value[1] > 0) {
             //     setValue2(event.target.value[1]);
             // }
+            if (activeThumb === 0) {
+                setValue1(event.target.value[0])
+            } else {
+                setValue2(event.target.value[1]);
+            }
         } else {
             setValue1(event.target.value)
         }
     }
-
 // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
 
     return (
