@@ -15,14 +15,20 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: any, value: number | number[], activeThumb: number) => {
+    const change = (event: any, value: number | number[]) => {
 
         if (Array.isArray(value)) {
-            if (activeThumb === 0) {
+            if (event.target.value[0] > 0) {
                 setValue1(event.target.value[0])
-            } else {
+            }
+            if (event.target.value[1] > 0) {
                 setValue2(event.target.value[1]);
             }
+            // if (activeThumb === 0) {
+            //     setValue1(event.target.value[0])
+            // } else {
+            //     setValue2(event.target.value[1]);
+            // }
         } else {
             setValue1(event.target.value)
         }
