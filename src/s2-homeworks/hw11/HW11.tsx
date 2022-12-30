@@ -18,6 +18,8 @@ function HW11() {
 
     const change = (event: any, value: number | number[], activeThumb: number) => {
         if (Array.isArray(value)) {
+            setValue1(event.target.value[0])
+            setValue2(event.target.value[1]);
             // if (event.target.value[0] > 0) {
             //     setValue1(event.target.value[0])
             //     console.log(value1)
@@ -25,11 +27,11 @@ function HW11() {
             // if (event.target.value[1] > 0) {
             //     setValue2(event.target.value[1]);
             // }
-
-            setValue1(event.target.value[0])
-
-            setValue2(event.target.value[1]);
-
+            // if (activeThumb === 0) {
+            //     setValue1(event.target.value[0])
+            // } else {
+            //     setValue2(event.target.value[1]);
+            // }
         } else {
             setValue1(event.target.value)
         }
@@ -56,7 +58,7 @@ function HW11() {
                             // max={100}
                             // min={0}
                             // сделать так чтоб value1 изменялось // пишет студент
-                                    disableSwap/>
+                        />
                     </div>
 
                     <div className={s.wrapper}>
@@ -71,7 +73,7 @@ function HW11() {
                             // max={100}
                             // min={0}
                             // сделать так чтоб value1/2 изменялось // пишет студент
-                                    disableSwap/>
+                        />
 
                         <span id={'hw11-value-2'}
                               className={s.number}>
