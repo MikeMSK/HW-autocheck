@@ -1,10 +1,13 @@
 {
   "files": {
     "main.css": "/HW-autocheck/static/css/main.7d630895.css",
-    "main.js": "/HW-autocheck/static/js/main.2c232cc1.js",
+    "main.js": "/HW-autocheck/static/js/main.05dae949.js",
     "static/js/787.66cb4309.chunk.js": "/HW-autocheck/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/HW-autocheck/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/HW-autocheck/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
+    "static/media/error.svg": "/HW-autocheck/static/media/error.5a3135f381b00b53044eff200e725391.svg",
+    "static/media/500.svg": "/HW-autocheck/static/media/500.adbc5f265f6f3c1fb9c5633ffe365afa.svg",
+    "static/media/400.svg": "/HW-autocheck/static/media/400.8baa1b795048b6fa13ff8d30800aa1b1.svg",
     "static/media/404.svg": "/HW-autocheck/static/media/404.9ec31c0ba8d95b0480272e46af98c955.svg",
     "static/media/closeOutline.svg": "/HW-autocheck/static/media/closeOutline.b64ba402fac8a549bc2de97e9cf84a61.svg",
     "static/media/Quarter-Circle-Loading.svg": "/HW-autocheck/static/media/Quarter-Circle-Loading.f3f80f06d6ad6b44d70c.svg",
@@ -13,11 +16,11 @@
     "index.html": "/HW-autocheck/index.html",
     "static/media/burger.svg": "/HW-autocheck/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
     "main.7d630895.css.map": "/HW-autocheck/static/css/main.7d630895.css.map",
-    "main.2c232cc1.js.map": "/HW-autocheck/static/js/main.2c232cc1.js.map",
+    "main.05dae949.js.map": "/HW-autocheck/static/js/main.05dae949.js.map",
     "787.66cb4309.chunk.js.map": "/HW-autocheck/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d630895.css",
-    "static/js/main.2c232cc1.js"
+    "static/js/main.05dae949.js"
   ]
 }
