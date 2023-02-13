@@ -4,8 +4,9 @@ import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import axios from 'axios'
 import success200 from './images/200.svg'
-import error400 from './images/400.svg'
-import error500 from './images/500.svg'
+import success400 from './images/400.svg'
+import success500 from './images/500.svg'
+import error from './images/error.svg'
 import errorUnknown from './images/error.svg'
 
 /*
@@ -21,10 +22,9 @@ const HW13 = () => {
     const [image, setImage] = useState('')
 
     const send = (x?: boolean | null) => () => {
-        const url =
-            x === null
-                ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+        const url = x === null
+            ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
+            : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
 
         setCode('')
         setImage('')
@@ -34,14 +34,32 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
-                setImage(success200)
-                // дописать
-
+                console.log(res)
+                if (res.status === 200) {
+                    setCode('Код 200!')
+                    setInfo(res.data.info)
+                    setText(res.data.errorText)
+                    setImage(success200)
+                }
             })
             .catch((e) => {
-                // дописать
-
+                console.log(e)
+                if (e.response.status === 400) {
+                    setCode('Ошибка 400!')
+                    setInfo(e.response.data.info)
+                    setText(e.response.data.errorText)
+                    setImage(success400)
+                } else if (e.response.status === 500) {
+                    setCode('Ошибка 500!')
+                    setInfo(e.response.data.info)
+                    setText(e.response.data.errorText)
+                    setImage(success500)
+                } else {
+                    setCode('Error!')
+                    setInfo(e.name)
+                    setText(e.message)
+                    setImage(error)
+                }
             })
     }
 
@@ -51,37 +69,33 @@ const HW13 = () => {
 
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
-                    <SuperButton
-                        id={'hw13-send-true'}
-                        onClick={send(true)}
-                        xType={'secondary'}
+                    <SuperButton id={'hw13-send-true'}
+                                 onClick={send(true)}
+                                 xType={'secondary'}
                         // дописать
 
                     >
                         Send true
                     </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-false'}
-                        onClick={send(false)}
-                        xType={'secondary'}
+                    <SuperButton id={'hw13-send-false'}
+                                 onClick={send(false)}
+                                 xType={'secondary'}
                         // дописать
 
                     >
                         Send false
                     </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-undefined'}
-                        onClick={send(undefined)}
-                        xType={'secondary'}
+                    <SuperButton id={'hw13-send-undefined'}
+                                 onClick={send(undefined)}
+                                 xType={'secondary'}
                         // дописать
 
                     >
                         Send undefined
                     </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-null'}
-                        onClick={send(null)} // имитация запроса на не корректный адрес
-                        xType={'secondary'}
+                    <SuperButton id={'hw13-send-null'}
+                                 onClick={send(null)} // имитация запроса на не корректный адрес
+                                 xType={'secondary'}
                         // дописать
 
                     >
@@ -91,17 +105,22 @@ const HW13 = () => {
 
                 <div className={s.responseContainer}>
                     <div className={s.imageContainer}>
-                        {image && <img src={image} className={s.image} alt="status"/>}
+                        {image && <img src={image}
+                                       className={s.image}
+                                       alt="status"/>}
                     </div>
 
                     <div className={s.textContainer}>
-                        <div id={'hw13-code'} className={s.code}>
+                        <div id={'hw13-code'}
+                             className={s.code}>
                             {code}
                         </div>
-                        <div id={'hw13-text'} className={s.text}>
+                        <div id={'hw13-text'}
+                             className={s.text}>
                             {text}
                         </div>
-                        <div id={'hw13-info'} className={s.info}>
+                        <div id={'hw13-info'}
+                             className={s.info}>
                             {info}
                         </div>
                     </div>
